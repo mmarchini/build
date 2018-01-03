@@ -1,5 +1,3 @@
-#!/bin/bash
-
 # Helper vars for printing in color. Use with:
 # echo -e "${RED}foo${NC}" # Echo foo in red, then reset color.
 # printf "${BBLUE}foo${NC}" # Echo foo in bright blue, then reset color.
