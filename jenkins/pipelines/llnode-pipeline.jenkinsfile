@@ -10,8 +10,6 @@ properties([
   ]),
 ])
 
-if (!pr['GIT_REPO']) { error("You didn't define a GIT_REPO.") }
-
 def pr = [] // Mutable parameter set to pass to jobs. I know this is crazy.
 String printParams = '' // String of params to print
 for (param in params) {
@@ -21,6 +19,8 @@ for (param in params) {
     }
 }
 println "\n### BUILD PARAMETERS ###\n${printParams}"
+
+if (!pr['GIT_REPO']) { error("You didn't define a GIT_REPO.") }
 
 stage('Test llnode') {
     def versions = params['NODE_VERSIONS'].split()
